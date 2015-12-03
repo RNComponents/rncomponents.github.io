@@ -1,24 +1,17 @@
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    progress: true,
-    contentBase: './',
-    port: 8081
-  },
+  devtool: 'eval',
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8081',
-    path.resolve(__dirname, 'index.jsx')
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index'
   ],
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: './bundle.js'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
   module: {
     loaders:[
@@ -27,6 +20,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    })
   ]
-}
+};

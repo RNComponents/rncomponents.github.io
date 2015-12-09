@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack",
     "start": "node server.dev.js",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.config.js"
+    "deploy": "NODE_ENV=production webpack -p --config webpack.deploy.js"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

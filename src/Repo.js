@@ -29,11 +29,11 @@ export default class Repo extends React.Component {
 
   render () {
     if (!this.state.loaded) {
-      return <p>Loading...</p>;
+      return <p style={{textAlign:'center'}}>Loading...</p>;
     }
 
     return (
-      <table>
+      <table className="repo-table">
         <thead>
           <tr>
             <th>Repo</th>

@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  color: #666;
+  font-family: "Lato", Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1D62F0;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.repo-table {
+  width: 1024px;
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 10px;
+  }
+
+  td {
+    border: 1px solid rgba(200, 200, 200, 0.5);
+  }
+}
+
+.footer {
+  text-align: center;
+  margin: 20px 0;
+  p {
+    font-size: 14px;
+  }
+}
